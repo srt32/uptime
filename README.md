@@ -10,7 +10,7 @@ GitHub Action to check the status of endpoints
 
 ### expected-statuses
 
-The list of statuses that are okay. Defaults to `[200]`
+Comma separated list of statuses that are okay. Defaults to `"200"`
 
 ## Outputs
 
