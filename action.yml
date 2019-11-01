@@ -1,0 +1,16 @@
+name: 'Uptime'
+description: 'Ping an URL and get an issue created if it does not respond as you expect'
+inputs:
+  url-to-hit:
+    description: 'which url to hit'
+    required: true
+  expected-statuses:
+    description: 'which http response statuses are expected'
+    required: false
+    default: [200]
+outputs:
+  status: # id of output
+    description: 'The http status we got'
+runs:
+  using: 'node12'
+  main: 'index.js'
