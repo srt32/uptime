@@ -1,5 +1,5 @@
 name: 'Uptime'
-description: 'Ping an URL and get an issue created if it does not respond as you expect'
+description: 'Ping an URL and check HTTP status code'
 inputs:
   url-to-hit:
     description: 'which url to hit'

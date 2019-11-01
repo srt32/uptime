@@ -8,15 +8,12 @@ try {
   console.log(`Pinging ${urlToHit} and expecting ${expectedStatuses}`);
 
   https.get(urlToHit, (resp) => {
-    resp.on('end', () => {
-      if (!expectedStatuses.includes(resp.statusCode)) {
-        core.setFailed(`Request status was ${resp.statusCode}`);
-        // TODO(srt32): create an issue
-      } else {
-        console.log(`Successful check`);
-        core.setOutput("status", resp.statusCode);
-      }
-    });
+    if (!expectedStatuses.includes(resp.statusCode)) {
+      core.setFailed(`Request status was ${resp.statusCode}`);
+    } else {
+      console.log(`Successful check`);
+      core.setOutput("status", resp.statusCode);
+    }
   }).on("error", (err) => {
     console.log(`Request failed`);
     core.setFailed(err.message);
