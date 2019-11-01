@@ -24,5 +24,5 @@ The status we got.
 users: srt32/uptime
 with:
   url-to-hit: 'myservice.example.com'
-  expected-statues: [200, 301] 
+  expected-statues: "200,301"
 ```

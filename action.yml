@@ -7,7 +7,7 @@ inputs:
   expected-statuses:
     description: 'which http response statuses are expected'
     required: false
-    default: [200]
+    default: "200"
 outputs:
   status: # id of output
     description: 'The http status we got'

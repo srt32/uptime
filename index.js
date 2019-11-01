@@ -4,7 +4,7 @@ const https = require('https');
 
 try {
   const urlToHit = core.getInput('url-to-hit');
-  const expectedStatuses = core.getInput('expected-statuses');
+  const expectedStatuses = core.getInput('expected-statuses').split(",");
   console.log(`Pinging ${urlToHit} and expecting ${expectedStatuses}`);
 
   https.get(urlToHit, (resp) => {
