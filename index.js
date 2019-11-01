@@ -9,7 +9,7 @@ try {
 
   https.get(urlToHit, (resp) => {
     resp.on('end', () => {
-      if !expectedStatuses.includes(resp.statusCode) {
+      if (!expectedStatuses.includes(resp.statusCode)) {
         core.setFailed(`Request status was ${resp.statusCode}`);
         // TODO(srt32): create an issue
       } else {
