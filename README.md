@@ -21,8 +21,20 @@ The status we got.
 ## Example usage
 
 ```
-users: srt32/uptime
-with:
-  url-to-hit: 'https://myservice.example.com'
-  expected-statuses: "200,301"
+  
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+
+jobs:
+  ping_site:
+    runs-on: ubuntu-latest
+    name: Ping the site
+    steps:
+    - name: Check the site
+      id: hello
+      uses: srt32/uptime@master
+      with:
+        url-to-hit: "https://example.com"
+        expected-statuses: "200,301"
 ```
