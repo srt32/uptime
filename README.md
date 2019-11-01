@@ -23,6 +23,6 @@ The status we got.
 ```
 users: srt32/uptime
 with:
-  url-to-hit: 'myservice.example.com'
+  url-to-hit: 'https://myservice.example.com'
   expected-statues: "200,301"
 ```
