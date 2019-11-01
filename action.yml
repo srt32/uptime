@@ -1,4 +1,4 @@
-name: 'Uptime'
+name: 'Uptime Action'
 description: 'Ping an URL and check HTTP status code'
 inputs:
   url-to-hit:
