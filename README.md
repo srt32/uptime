@@ -1,6 +1,6 @@
 # uptime
 
-GitHub Action to check the status of endpoints
+GitHub Action to check the status of endpoints. This action can be used to check a website is live after a deploy or on an ongoing basis via cron.
 
 ## Inputs
 
