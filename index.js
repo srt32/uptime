@@ -1,6 +1,7 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
 const https = require('https');
+const url = require('url');
 
 try {
   const urlToHit = core.getInput('url-to-hit');
