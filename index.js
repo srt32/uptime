@@ -5,9 +5,19 @@ const https = require('https');
 try {
   const urlToHit = core.getInput('url-to-hit');
   const expectedStatuses = core.getInput('expected-statuses').split(",").map((status) => Number(status)) ;
+  const userAgentToUse = core.getInput('user-agent-to-use');
   console.log(`Pinging ${urlToHit} and expecting ${expectedStatuses}`);
 
-  https.get(urlToHit, (resp) => {
+  const options = {
+    hostname: urlToHit,
+    path: '/',
+    method: 'GET',
+    headers: {
+      'User-Agent': userAgentToUse
+    }
+  };
+
+  https.get(options, (resp) => {
     if (!expectedStatuses.includes(resp.statusCode)) {
       core.setFailed(`Request status was ${resp.statusCode}`);
     } else {
