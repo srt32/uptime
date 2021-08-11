@@ -4,13 +4,16 @@ const https = require('https');
 
 try {
   const urlToHit = core.getInput('url-to-hit');
+  const parsed_url = url.parse(urlToHit);
   const expectedStatuses = core.getInput('expected-statuses').split(",").map((status) => Number(status)) ;
   const userAgentToUse = core.getInput('user-agent-to-use');
   console.log(`Pinging ${urlToHit} and expecting ${expectedStatuses}`);
 
+
   const options = {
-    hostname: urlToHit,
-    path: '/',
+    hostname: parsed_url.host,
+    path: parsed_url.path,
+    port: parsed_url.port,
     method: 'GET',
     headers: {
       'User-Agent': userAgentToUse
