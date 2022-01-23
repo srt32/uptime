@@ -5,16 +5,16 @@ const url = require('url');
 
 try {
   const urlToHit = core.getInput('url-to-hit');
-  const parsed_url = url.parse(urlToHit);
+  const parsedUrl = url.parse(urlToHit);
   const expectedStatuses = core.getInput('expected-statuses').split(",").map((status) => Number(status)) ;
   const userAgentToUse = core.getInput('user-agent-to-use');
   console.log(`Pinging ${urlToHit} and expecting ${expectedStatuses}`);
 
 
   const options = {
-    hostname: parsed_url.host,
-    path: parsed_url.path,
-    port: parsed_url.port,
+    hostname: parsedUrl.host,
+    path: parsedUrl.path,
+    port: parsedUrl.port,
     method: 'GET',
     headers: {
       'User-Agent': userAgentToUse
