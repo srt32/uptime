@@ -8,6 +8,11 @@ inputs:
     description: 'which http response statuses are expected'
     required: false
     default: "200"
+  user-agent-to-use:
+    description: 'User agent to use while sending the request'
+    required: false
+    default: ''
+
 outputs:
   status: # id of output
     description: 'The http status we got'
